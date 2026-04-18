@@ -53,22 +53,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
       </header>
 
       {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center pt-32 pb-20 px-6 w-full max-w-5xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-blue-300 mb-8 backdrop-blur-sm"
-        >
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>AI AST 智能解析驱动</span>
-        </motion.div>
-
+      <main className="relative z-10 flex flex-col items-center justify-center pt-20 pb-20 px-6 w-full max-w-5xl mx-auto text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200"
+          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200"
         >
           SQL Prism
         </motion.h1>
@@ -77,7 +67,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl leading-relaxed mx-auto font-medium"
+          className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed mx-auto font-medium"
         >
           将复杂的 SQL 逻辑折射为<span className="text-cyan-400">清晰架构图</span>。<br/>
           一款智能驱动的现代视觉解释器，自动梳理嵌套与连接。
@@ -102,7 +92,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStart }) => {
         </motion.div>
 
         {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mt-16 w-full text-left">
+        <div className="grid md:grid-cols-3 gap-6 mt-6 w-full text-left">
           <motion.div 
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}

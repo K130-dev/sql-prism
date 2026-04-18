@@ -49,7 +49,11 @@ WHERE region_rank <= 5
 ORDER BY region, total_revenue DESC;
 `;
 
-const MainApp: React.FC = () => {
+interface MainAppProps {
+  onBack: () => void;
+}
+
+const MainApp: React.FC<MainAppProps> = ({ onBack }) => {
   const [sqlInput, setSqlInput] = useState<string>(DEFAULT_QUERY.trim());
   const [status, setStatus] = useState<QueryStatus>(QueryStatus.IDLE);
   const [data, setData] = useState<AnalysisResult | null>(null);
@@ -324,12 +328,12 @@ const MainApp: React.FC = () => {
         className="flex-shrink-0 flex flex-col border-r border-[#2A2B40] bg-[#18192A] transition-colors"
       >
         <div className="p-4 border-b border-[#2A2B40] flex justify-between items-center bg-[#11121F]">
-          <div className="flex items-center gap-2">
+          <button onClick={onBack} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="relative flex items-center justify-center w-6 h-6 rounded bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/10">
                <div className="w-0 h-0 border-l-[4px] border-r-[4px] border-b-[8px] border-transparent border-b-cyan-400"></div>
             </div>
             <h1 className="text-lg font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200">SQL Prism</h1>
-          </div>
+          </button>
           <button 
             onClick={handleAnalyze}
             disabled={status === QueryStatus.LOADING}
@@ -445,5 +449,5 @@ export default function App() {
     return <LandingPage onStart={() => setIsStarted(true)} />;
   }
 
-  return <MainApp />;
+  return <MainApp onBack={() => setIsStarted(false)} />;
 }
